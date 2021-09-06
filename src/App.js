@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
+import TaskCurd from './TaskCurd';
+
 import './App.css';
+import HookCrud from './HookCrud';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import Navbar from './Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Route path="/" component={TaskCurd} exact />
+      <Route path="/hook-crud" component={HookCrud} />
+    </Router>
+    // <>
+    //   <TaskCurd />
+    //   <HookCrud />
+    // </>
   );
 }
-
 export default App;
